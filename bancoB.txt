@@ -1,0 +1,59 @@
+ create database pizzariajavame;
+
+ use pizzariajavame;
+
+ create table clientes (
+	
+    id bigint not null auto_increment,
+    nome varchar (255),
+    telefone varchar (14),
+    cpf varchar (20),
+    endereco varchar (255),
+    
+    primary key (id)
+ );
+   
+  create table cardapio (
+	
+    id bigint not null auto_increment,
+    pizza varchar (255),
+    descricao varchar (255),
+    tamanho varchar(20),
+    preco double,
+    
+    primary key (id)
+ );
+ 
+   insert into cardapio (pizza,descricao,tamanho,preco)
+   values ("Mussarela","Mussarela com rodelas de tomate 
+   e Oregano","Grande",43);
+
+   insert into cardapio (pizza,descricao,tamanho,preco)
+   values ("Carne seca","Mussarela + Carne Seca + cebolas e
+   Catupiry com Molho de Tomate", "Grande",43);
+ 
+   insert into cardapio (pizza,descricao,tamanho,preco)
+   values ("Frango Catupiry","Frango desfiado + Catupiry 
+   com Molho Branco e oregano","Grande",43);
+
+   insert into cardapio (pizza,descricao,tamanho,preco)
+   values ("Light Especial","Mussarela + Cheddar + Peru Defumado + Catupiry Light 
+   com Molho de Tomate e oregano","Grande",53);
+
+   insert into cardapio (pizza,descricao,tamanho,preco)
+   values ("Calabresa","Mussarela + calabresa + cebolas e oregano
+   com molho de tomate","Grande",43);
+
+     create table pedidos (
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   nome bigint,
+   pizza bigint,
+   quantidade int,
+   endereco varchar (255),
+   primary key (id),
+   foreign key (nome) references clientes(id),
+   foreign key (pizza) references cardapio(id)
+);
+ 
+
+            
