@@ -9,7 +9,7 @@ public class ConnectionFactory {
 	private static Connection con = null;
 	private static final String banco = "pizzariajavame";
 	private static final String user = "root";
-	private static final String password = "metuzael";
+	private static final String password = "lab02";
 
 	public static Connection getConnection() {
 		if (con == null) {
